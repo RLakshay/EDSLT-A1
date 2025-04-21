@@ -96,16 +96,21 @@ void addToGarage(int carNumber)
     garage[garageEnd] = (char*)malloc(10 * sizeof(char));
     int num = carNumber, i = 0;
 
-    if (num == 0) {
+    if (num == 0) 
+    {
         garage[garageEnd][i++] = '0';
-    } else {
+    } else 
+    {
         int temp = num, digits = 0;
-        while (temp) { temp /= 10; digits++; }
+        while (temp) 
+        { temp /= 10; digits++; 
+        }
 
-        for (int j = digits - 1; j >= 0; j--) {
+        for (int j = digits - 1; j >= 0; j--)
+            {
             garage[garageEnd][j] = (num % 10) + '0';
             num /= 10;
-        }
+            }
         i = digits;
     }
 
@@ -216,7 +221,6 @@ void simulateDefectTracking()
  printf("\nThere was brake oil leak in car3 and it was repaired by replacing brake hoses and applying sealants\n");
 }
 
-//VIPhttps://www.onlinegdb.com/#tab-stdin
 typedef struct CNode
 {
     char* carName;
@@ -233,7 +237,8 @@ void addVIP(char* carName)
     {
         vipHead = newNode;
         newNode->next = newNode;
-    } else 
+    }
+    else 
     {
         newNode->next = vipHead->next;
         vipHead->next = newNode;
